@@ -1,28 +1,29 @@
 import java.awt.*;
-import java.awt.event.*;
 
 
-class LoginPage extends Frame implements ActionListener {
-    Label l1, l2, msg;
+class LoginPage extends Frame 
+{
+    Label l1, l2;
     TextField t1, t2;
     Button b1, b2;
 
-    LoginPage() {
-        setTitle("Login Page");
-        setSize(300, 200);
-        setLayout(new GridLayout(4, 2, 10, 10));
-        setBackground(Color.LIGHT_GRAY);
-
+    LoginPage(String t) 
+    {
+        super(t);
+        setLayout(null);
         l1 = new Label("Username:");
         l2 = new Label("Password:");
         t1 = new TextField();
         t2 = new TextField();
-        t2.setEchoChar('*');
         b1 = new Button("Login");
         b2 = new Button("Clear");
 
-        msg = new Label("");
-        msg.setForeground(Color.BLUE);
+        l1.setBounds(100,100,50,25);
+        l2.setBounds(100,150,50,25);
+        t1.setBounds(160,100,100,25);
+        t2.setBounds(160,150,100,25);
+        b1.setBounds(125, 200, 50, 25);
+        b2.setBounds(155, 200, 50, 25);
 
         add(l1);
         add(t1);
@@ -30,40 +31,12 @@ class LoginPage extends Frame implements ActionListener {
         add(t2);
         add(b1);
         add(b2);
-        add(msg);
 
-        b1.addActionListener(this);
-        b2.addActionListener(this);
-
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                dispose();
-            }
-        });
-
-        setVisible(true);
     }
-
-    public void actionPerformed(ActionEvent e) {
-        String user = t1.getText();
-        String pass = t2.getText();
-
-        if (e.getSource() == b1) { 
-            if (user.equals("admin") && pass.equals("12345")) {
-                msg.setText("Login Successful!");
-                msg.setForeground(Color.GREEN);
-            } else {
-                msg.setText("Invalid username or password!");
-                msg.setForeground(Color.RED);
-            }
-        } else if (e.getSource() == b2) {
-            t1.setText("");
-            t2.setText("");
-            msg.setText("");
-        }
-    }
-
-    public static void main(String[] args) {
-        new LoginPage();
+    public static void main(String arg[])
+    {
+        LoginPage l=new LoginPage("Login Page");
+        l.setSize(350,200);
+        l.setVisible(true); 
     }
 }
