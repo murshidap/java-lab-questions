@@ -1,3 +1,4 @@
+//8
 import java.util.Scanner;
 
 class Remove 
