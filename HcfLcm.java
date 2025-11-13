@@ -1,3 +1,4 @@
+//6
 import java.util.Scanner;
 class HcfLcm
 {
