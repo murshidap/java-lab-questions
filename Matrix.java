@@ -1,3 +1,4 @@
+//7
 import java.util.Scanner;
 
 class Matrix 
