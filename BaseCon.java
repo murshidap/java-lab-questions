@@ -1,3 +1,4 @@
+//4
 import java.util.Scanner;
 
 class BaseCon 
