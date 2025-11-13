@@ -1,3 +1,4 @@
+//18
 import java.util.Scanner;
 
 class MinBalExp extends Exception {
