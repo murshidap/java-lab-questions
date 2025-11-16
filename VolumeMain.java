@@ -1,51 +1,41 @@
-//16
 import java.util.Scanner;
 
-interface Volume {
-    double pi = 3.14159;
-    void readData();
-    void dispVolume();
-}
+class Volume {
 
-class Sphere implements Volume {
-    double r, v;
-
-    public void readData() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter radius of sphere: ");
-        r = sc.nextDouble();
+    // Volume of Cube: side³
+    double findVolume(double side) {
+        return side * side * side;
     }
 
-    public void dispVolume() {
-        v = (4 / 3.0) * pi * r * r * r;
-        System.out.println("Volume of Sphere: " + v);
-    }
-}
-
-class Cylinder implements Volume {
-    double r, h, v;
-
-    public void readData() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter radius and height of cylinder: ");
-        r = sc.nextDouble();
-        h = sc.nextDouble();
+    // Volume of Rectangular Box: l × b × h
+    double findVolume(double length, double breadth, double height) {
+        return length * breadth * height;
     }
 
-    public void dispVolume() {
-        v = pi * r * r * h;
-        System.out.println("Volume of Cylinder: " + v);
+    // Volume of Cylinder: π r² h
+    double findVolume(double radius, int height) {
+        return 3.14159 * radius * radius * height;
     }
 }
 
 public class VolumeMain {
     public static void main(String[] args) {
-        Sphere s = new Sphere();
-        s.readData();
-        s.dispVolume();
+        Scanner sc = new Scanner(System.in);
+        Volume v = new Volume();
 
-        Cylinder c = new Cylinder();
-        c.readData();
-        c.dispVolume();
+        System.out.print("Enter side of cube: ");
+        double side = sc.nextDouble();
+        System.out.println("Volume of Cube = " + v.findVolume(side));
+
+        System.out.print("\nEnter length, breadth and height of rectangular box: ");
+        double l = sc.nextDouble();
+        double b = sc.nextDouble();
+        double h = sc.nextDouble();
+        System.out.println("Volume of Rectangular Box = " + v.findVolume(l, b, h));
+
+        System.out.print("\nEnter radius and height of cylinder: ");
+        double r = sc.nextDouble();
+        int hCyl = sc.nextInt();
+        System.out.println("Volume of Cylinder = " + v.findVolume(r, hCyl));
     }
 }
