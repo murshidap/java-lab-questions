@@ -1,4 +1,4 @@
-//14 java
+//14
 
 import java.util.Scanner;
 
