@@ -1,3 +1,5 @@
+//18 java 
+
 import java.util.Scanner;
 
 // User-defined exception
