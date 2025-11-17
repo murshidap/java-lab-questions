@@ -1,4 +1,4 @@
-//12 java
+//12 
 import java.util.Scanner;
 
 class Complex {
